@@ -23,5 +23,6 @@
 - Then trust it `gpg --edit-key <keyID>` and `trust`
 - Temporarily wire the gpg agent for ssh `export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"`
   - it will get permanently wired when the `.zshrc` is loaded from the .dotfiles
+- `ssh-add -L` shall print your public key, hence you'll be able to clone your private repos
 - bootstrap: `curl -fsSL https://raw.githubusercontent.com/reckseba/ansible-bootstrap/refs/heads/main/arch.sh | bash`
 
