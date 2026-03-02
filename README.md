@@ -18,9 +18,10 @@
 - Inside archinstall check the partitions and disk encryption settings
 - Then remove `--dry-run` and just do it
 - after installation reboot
-- Import your public key `gpg --import public.asc` and validate `gpg -K`
+- Import your public key `gpg --import public.asc` and validate `gpg --list-public-keys`
   - `gpg --card-edit` and `fetch` would also work when you published the key somewhere
 - Then trust it `gpg --edit-key <keyID>` and `trust`
+- Connect to the internet via `nmcli dev wifi connect <SSID> --ask`
 - Temporarily wire the gpg agent for ssh `export SSH_AUTH_SOCK="$(gpgconf --list-dirs agent-ssh-socket)"`
   - it will get permanently wired when the `.zshrc` is loaded from the .dotfiles
 - `ssh-add -L` shall print your public key, hence you'll be able to clone your private repos
